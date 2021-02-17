@@ -1,12 +1,22 @@
 import Persona from "./Persona"
-export default function Personas({personas}){
+import {useSelector} from "react-redux"
+function Personas(){
+
+    const personas =  useSelector((state)=>{
+        return state.personasReducer.personas
+    })
+    const cantidad =  useSelector((state)=>{
+        return state.personasReducer.cantidad
+    })
+
     return personas.map((persona)=>{
-        console.log(persona.nombre)
         return <Persona 
             nombre={persona.nombre}
             apellido = {persona.apellido}
             edad = {persona.edad}
             />
-    })
-    
+    })  
 }
+
+export default Personas;
+

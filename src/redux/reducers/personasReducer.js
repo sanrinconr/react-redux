@@ -1,6 +1,6 @@
 import {NUEVA_PERSONA} from "../actions/personaAction"
 const default_personas_reducer = {
-    personas:[],
+    personas:[{nombre:"carlos",apellido:"juan",edad:15},],
     cantidad: 0
 }
 export default function personas_reducer(state = default_personas_reducer, action){
